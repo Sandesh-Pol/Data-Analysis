@@ -61,4 +61,7 @@ To set up the environment and run the application, follow these steps:
 Contributions to the project are welcome! Whether it's bug fixes, feature enhancements, or additional dataset integrations, feel free to open a pull request.
 
 ![3](https://github.com/Sandesh-Pol/Data-Analysis/assets/135794224/8b8376ff-043d-4eaa-bb46-b92887c4c56c)
+![image](https://github.com/Sandesh-Pol/Data-Analysis/assets/135794224/8584175f-812f-437b-a606-f01f40d8d809)
+![image](https://github.com/Sandesh-Pol/Data-Analysis/assets/135794224/7072ec6d-b00c-4057-843e-419688134ff5)
+
 
