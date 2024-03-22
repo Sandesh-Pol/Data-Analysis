@@ -1,0 +1,593 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+  <!-- Mirrored from zrtechsolutions.com/demo/html/technoit/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Mar 2024 12:40:08 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Data Analysis</title>
+
+    <!-- Favicons -->
+    <link href="{% static 'images/favicon.png' %}" rel="icon" />
+    <link href="{% static 'images/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&amp;display=swap" rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link href="{% static 'stylesheets/font-awesome.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+    <!-- Main CSS File -->
+    <link href="{% static 'stylesheets/styles.css' %}" rel="stylesheet" />
+</head>
+
+
+  <body>
+    <header
+      id="header"
+      class="header d-flex align-items-center sticked stikcy-menu"
+    >
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="#" class="logo d-flex align-items-center">
+          <img src="{% static 'images/logo.png' %}" alt="logo" />
+        </a>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a href="#" class="">Home</a></li>
+            {% if user.is_authenticated %}
+          <!-- If user is authenticated, show signup button -->
+        <li><a href="{% url 'logout_user' %}">Logout</a>  </li>
+          {% else %}
+          <!-- If user is not authenticated, show login button -->
+        <li><a href="{% url 'login_user' %}">Login</a>
+          {% endif %}
+        </li>
+            <li><a href="register" class="">Signup</a></li>
+          </ul>
+        </nav>
+        <button id="darkmode-button" style="display: none">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!--  Hero Section  -->
+    <section id="hero" class="hero sticked-header-offset">
+      <div id="particles-js"></div>
+      <div id="repulse-circle-div"></div>
+      <div class="container position-relative">
+        <div class="row gy-5 aos-init aos-animate">
+          <div
+            class="col-lg-7 offset-lg-5 dark-bg order-lg-1 d-flex flex-column justify-content-start text-left caption"
+          >
+            <h2 data-aos="fade-up">
+              the process of cleaning, analyzing, interpreting<span></span>
+                and visualizing data</span
+              ><span class="circle" data-aos="fade-right" data-aos-delay="800"
+                >.</span
+              >
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="400">
+              Data analysis tools help you discover relevant insights that lead to smarter and more effective decision-making.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <main id="main">
+      <!-- Start Service Section -->
+      <div id="services" class="section">
+        <div class="top-icon-box position-relative">
+          <div class="container position-relative">
+            <div class="row gy-4">
+              <div
+                class="col-xl-4 col-md-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="icon-box">
+                  <div class="icon">
+                    <img
+                      src="{% static 'images/icons/service-design.svg' %}"
+                      alt="icon"
+                    />
+                  </div>
+                  <h4 class="title">
+                    <a href="youtube" class="stretched-link">Sports Youtube Channel</a>
+                  </h4>
+                  <p>
+                    Sports Youtube Channe Views and Subscribers with Channel Names.
+                  </p>
+                </div>
+              </div>
+              <!--End Icon Box -->
+
+              <div
+                class="col-xl-4 col-md-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="icon-box">
+                  <div class="icon">
+                    <img
+                      src="{% static 'images/icons/service-hosting.svg' %}"
+                      alt="icon"
+                    />
+                  </div>
+                  <h4 class="title">
+                    <a href="mobile" class="stretched-link">All Company Mobile Sale</a>
+                  </h4>
+                  <p>
+                    All Company Mobile Sale
+                  </p>
+                </div>
+              </div>
+              <!--End Icon Box -->
+
+              <div
+                class="col-xl-4 col-md-4"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <div class="icon-box">
+                  <div class="icon">
+                    <img
+                      src="{% static 'images/icons/service-social.svg' %}"
+                      alt="icon"
+                    />
+                  </div>
+                  <h4 class="title">
+                    <a href="metro" class="stretched-link">Delhi Metro Network Analysis</a>
+                  </h4>
+                  <p>
+                    Metro Network Analysis involves examining the network of
+                     metro systems to understand their structure, efficiency, and effectiveness.
+                  </p>
+                </div>
+              </div>
+              <!--End Icon Box -->
+
+
+              <div
+                class="col-xl-4 col-md-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="icon-box">
+                  <div class="icon">
+                    <img
+                      src="{% static 'images/icons/service-cloud.svg' %}"
+                      alt="icon"
+                    />
+                  </div>
+                  <h4 class="title">
+                    <a href="worldcup" class="stretched-link">T20 World Cup 2022 Analysis</a>
+                  </h4>
+                  <p>
+                    Every sports event generates a lot of data which we can use to analyze the performance of players, teams, and many highlights of the game.
+                  </p>
+                </div>
+              </div>
+              <!--End Icon Box -->
+
+              
+              <!--End Icon Box -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Service Section -->
+
+      <!-- Featured -->
+      <section>
+        <div class="container" id="featured">
+          <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+            <h2>How to analyze data</h2>
+          </div>
+          <div class="row">
+            <!-- start  left -->
+            <div class="col-md-4 left">
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
+                <div class="description">
+                  <h4>Establish a goal</h4>
+                  <p>
+                    First, determine the purpose and key objectives of your data analysis. Think about the questions or concerns you 
+                    have and the goal you want to achieve by conducting this analysis.
+                  </p>
+                </div>
+                <div class="icon">
+                  <img src="{% static 'images/icons/icon-1.svg' %}" alt="icon" />
+                </div>
+              </div>
+
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="400">
+                <div class="description">
+                  <h4>Determine the type of data analytics</h4>
+                  <p>
+                    Identify the type of data that can answer your questions.
+                     If a simple overview is all you want, a descriptive analysis could be useful.
+                  </p>
+                </div>
+                <div class="icon">
+                  <img src="{% static 'images/icons/icon-2.svg' %}" alt="icon" />
+                </div>
+              </div>
+
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="500">
+                <div class="description">
+                  <h4>Determine a plan to produce the data</h4>
+                  <p>
+                    It can take varying amounts of time, effort and resources to collect data,
+                     depending on the type of information you're trying to gather. Before investing in this type of project.
+                  </p>
+                </div>
+                <div class="icon">
+                  <img src="{% static 'images/icons/icon-3.svg' %}" alt="icon" />
+                </div>
+              </div>
+            </div>
+            <!-- end  left -->
+
+            <!-- start  center -->
+            <div class="col-md-4 p-4 p-sm-5 center">
+              <div
+                class="list-center-wrap"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="center-icon">
+                  <img src="{% static 'images/features.jpg' %}" alt="icon" />
+                </div>
+              </div>
+            </div>
+            <!-- end  center -->
+            <!-- start  right -->
+            <div class="col-md-4 right">
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon">
+                  <img src="{% static 'images/icons/icon-4.svg' %}" alt="icon" />
+                </div>
+                <div class="description">
+                  <h4>Collect the data</h4>
+                  <p>
+                    Set up the necessary data collection processes and assemble a team of people who can accumulate and manage the information. 
+                  </p>
+                </div>
+              </div>
+
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon">
+                  <img src="{% static 'images/icons/icon-5.svg' %}" alt="icon" />
+                </div>
+                <div class="description">
+                  <h4>Clean the data</h4>
+                  <p>
+                    Once you've built a large data set, the next step is to clean or process the data to ensure it's accurate and free of errors.
+                  </p>
+                </div>
+              </div>
+
+              <div class="list-wrap" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon">
+                  <img src="{% static 'images/icons/icon-6.svg' %}" alt="icon" />
+                </div>
+                <div class="description">
+                  <h4>Evaluate the data</h4>
+                  <p>
+                    Investigate the data you've gathered carefully.
+                     Use various mathematical interventions to look for connections between points.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- end  right -->
+          </div>
+        </div>
+      </section>
+      <!-- Featured -->
+
+     
+      <!--  Our Team Section  -->
+      <section id="team" class="team sections-bg">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+          <div class="section-header">
+            <h2>Team</h2>
+            <p>Group Memers</p>
+          </div>
+
+          <div class="row gy-4">
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-1.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4>Jhone Bi</h4>
+                <span>Application Manager</span>
+               
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-1.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4>Sani Awesome</h4>
+                <span>Social Media</span>
+                
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-1.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4>Andrio Willi</h4>
+                <span>Content Writer</span>
+                
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-1.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4>Afa Jonson</h4>
+                <span>Business Manager</span>
+                
+              </div>
+            </div>
+            <!-- End Team Member -->
+          </div>
+        </div>
+      </section>
+      <!-- End Our Team Section -->
+
+      <!--  Frequently Asked Questions Section  -->
+      <section id="faq" class="faq">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>FAQ's</h2>
+          </div>
+          <div class="row gy-4">
+            <div class="col-lg-12">
+              <div
+                class="accordion accordion-flush"
+                id="faqlist"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-1"
+                    >
+                      <span class="num"
+                        ><i class="bi bi-arrow-right-circle-fill"></i
+                      ></span>
+                      What is data analysis?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      Data analysis is the process of collecting and examining statistical information and drawing conclusions from it.
+                       When conducting this process, professionals evaluate large amounts of information from various sources to find patterns and trends. This activity transforms data,
+                       such as customer reviews and feedback, into insights that managers can use to make decisions and develop strategic and tactical business plans. 
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-2"
+                    >
+                      <span class="num"
+                        ><i class="bi bi-arrow-right-circle-fill"></i
+                      ></span>
+                      How to explore data relationships.
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                     As its name suggests, the main aim of the exploratory analysis is to explore. Prior to it, there is still no notion of the relationship between the data and the variables. Once the data is investigated,
+                      exploratory analysis helps you to find connections and generate hypotheses and solutions for specific problems. A typical area of ​​application for it is data mining.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-3"
+                    >
+                      <span class="num"
+                        ><i class="bi bi-arrow-right-circle-fill"></i
+                      ></span>
+                      Data analytics jobs
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                     Typically, data analytics professionals make higher-than-average salaries and are in high demand within the labor market. The US Bureau of Labor Statistics (BLS) projects that careers in data analytics fields will grow by 23 percent between 2021 and 2031—much faster than average—and are estimated to pay a higher-than-average annual income of $82,360.
+                      But according to the Anaconda 2022 State of Data Science report, 63% of commercial organizations surveyed expressed concern over a talent shortage in the face of such rapid growth.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-4"
+                    >
+                      <span class="num"
+                        ><i class="bi bi-arrow-right-circle-fill"></i
+                      ></span>
+                      Why is data analysis important?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-4"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      Here's why it's worth implementing data analysis for your business:
+
+Understand your target audience: You might think you know how to best target your audience, but are your assumptions backed by data? Data analysis can help answer questions like, "What demographics define my target audience?" or "What is my audience motivated by?"
+
+Inform decisions: You don't need to toss and turn over a decision when the data points clearly to the answer. For instance, a restaurant could analyze which dishes on the menu are selling the most, helping them decide which ones to keep and which ones to change.
+
+Adjust budgets: Similarly, data analysis can highlight areas in your business that are performing well and are worth investing more in, as well as areas that aren't generating enough revenue and should be cut. For example, a B2B software company might discover their product for enterprises is thriving while their small business solution lags behind. This discovery could prompt them to allocate more budget toward the enterprise product, resulting in better resource utilization.
+
+Identify and solve problems: Let's say a cell phone manufacturer notices data showing a lot of customers returning a certain model. When they investigate, they find that model also happens to have the highest number of crashes. Once they identify and solve the technical issue, they can reduce the number of returns.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Frequently Asked Questions Section -->
+
+      <!--  Call To Action Section  -->
+      <section id="call-to-action" class="call-to-action">
+        <div
+          class="container text-center aos-init aos-animate"
+          data-aos="zoom-out"
+        >
+          <div class="row gy-4">
+            <div class="col-lg-12">
+              <h3>Let's Discuss your Projects</h3>
+              <p>
+                Company leaders can examine various types of data to make smart business decisions.
+                 The process of data analysis involves transforming numerical values into accessible insights about different business areas. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Call To Action Section -->
+
+     
+    </main>
+    <!-- End #main -->
+
+    <!--  Footer  -->
+    <footer id="footer" class="footer-section">
+      <div class="container">
+       
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 text-left text-lg-left">
+              <div class="copyright-text">
+               <p style="color: #d10034;">
+                  Technoit © 2023 - Designed by SIT Polytechnic
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="scroll-top d-flex align-items-center justify-content-center active"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+   <!-- Vendor JS Files -->
+<script src="{% static 'javascripts/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'javascripts/plugins.js' %}"></script>
+<script src="{% static 'javascripts/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'javascripts/validator.min.js' %}"></script>
+<script src="{% static 'javascripts/contactform.js' %}"></script>
+<script src="{% static 'javascripts/particles.min.js' %}"></script>
+<script src="{% static 'javascripts/script.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'javascripts/main.js' %}"></script>
+
+  </body>
+  <!-- Mirrored from zrtechsolutions.com/demo/html/technoit/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Mar 2024 12:40:32 GMT -->
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .registration-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center; /* Center align content */
+    }
+
+    .registration-container h2 {
+      margin-bottom: 20px;
+      color: #007bff; /* Blue header */
+    }
+
+    .registration-container input[type="text"],
+    .registration-container input[type="email"],
+    .registration-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease; /* Smooth transition on focus */
+    }
+
+    .registration-container input[type="text"]:focus,
+    .registration-container input[type="email"]:focus,
+    .registration-container input[type="password"]:focus {
+      border-color: #007bff; /* Blue border on focus */
+    }
+
+    .registration-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .registration-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .registration-container p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .registration-container a {
+      color: #007bff; /* Blue link color */
+      text-decoration: none;
+    }
+
+    .registration-container a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="registration-container">
+    <h2>Registration</h2>
+    <form action="" method="post">
+      {% csrf_token %} 
+      <div class="inputBox">
+        <input type="text" required="required" name="username" placeholder="Enter your username">
+      </div>
+      <div class="inputBox">
+        <input type="email" required="required" name="email" placeholder="Enter your email">
+      </div>
+      <div class="inputBox">
+        <input type="password" required="required" name="password1" placeholder="Enter your password">
+      </div>
+      <div class="inputBox">
+        <input type="password" required="required" name="password2" placeholder="Confirm your password">
+      </div>
+      
+      <div class="inputBox">
+        <input type="submit" value="Create Account" />
+      </div>
+    </form>
+    <p>Already a member? <a href="{% url 'login_user' %}" class="login">Log in</a></p>
+  </div>
+</body>
+</html>
